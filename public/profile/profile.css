@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.profile-container {
+    display: flex;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.left-block {
+    background-color: #e6f2ff;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.right-block {
+    padding: 20px;
+    width: 70%;
+}
+
+.profile-icon-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+}
+
+.profile-icon {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name {
+    margin: 0;
+    font-size: 24px;
+}
+
+.identity {
+    margin-top: 5px;
+    color: #666;
+}
+
+/* .heart-rate-icon {
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-right: 10px;
+    size: 1ch;
+    height: 50%;
+} */
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="tel"],
+input[type="email"],
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#back-to-menu {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#save-profile {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#back-to-menu:hover, #save-profile:hover {
+    opacity: 0.8;
+}
+textarea {
+    resize: vertical;
+}

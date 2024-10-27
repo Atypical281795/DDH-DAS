@@ -1,0 +1,393 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    width: 100%;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#sidebar-toggle {
+    background: none;
+    border-color: white;
+    border-radius: 100%;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
+
+.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.rotate-360 {
+    transform: rotate(360deg);
+}
+
+
+#sidebar {
+    width: 15%;
+    background: linear-gradient(to right, #a6a6a6, #ffffff);
+    padding: 10px;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left: -15%;
+    transition: left 0.3s ease;
+}
+
+#sidebar.sidebar-open {
+    left: 0;
+}
+
+.list-title{
+    flex: 8; /* 佔比 80% */
+    white-space: nowrap; /* 防止換行 */
+    /* border-bottom: 1px solid black; */
+}
+#main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #b1d2e6, #4e6978);
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+}
+
+#main-content.sidebar-open {
+    margin-left: 15%;
+}
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    height: 60%;
+}
+.image-box {
+    width: 680px;
+    border: 3px solid white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+}
+.image-title {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid #ccc;
+}
+.image-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    border-top: 3px solid white;
+    align-items: center;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #ccc;
+    overflow: hidden;
+    position: relative; /* 添加这行 */
+}
+
+.image-content img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute; /* 添加这行 */
+    object-fit: contain;
+}
+#load-image-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    /* cursor: pointer; */
+    border-radius: 15px;
+    transition: background-color 0.3s;
+}
+#load-image-button:hover {
+    /* background: linear-gradient(to right, #5ce1e6, #8c52ff); */
+    background: linear-gradient(to right, #c3e6cb, #94b9ff);
+}
+#start-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    /* cursor: pointer; */
+    border-radius: 15px;
+    transition: background-color 0.3s;
+}
+#start-button:hover {
+    background: linear-gradient(to right, #c3e6cb, #94b9ff);
+}
+.bottom-container {
+    display: flex;
+    height: 35%;
+}
+.text-area-container {
+    width: 58%;
+    display: flex;
+    flex-direction: row;
+    margin-right: 4%;
+    gap: 10px;
+}
+
+.text-area-wrapper {
+    background-color: #e6f3ff;
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.text-area-wrapper h4 {
+    margin: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #b8d8ff;
+    color: #4a4a4a;
+    font-size: 18px;
+}
+.text-title{
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    background: #b1d2e6;
+    border-radius: 5px;
+}
+textarea {
+    flex: 1;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    font-size: 25px;/*調整文字字體大小*/
+    padding: 10px 0;
+}
+
+textarea::placeholder {
+    font-size: 25px;/*調整預設文字大小*/
+    color: #999;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.button-container {
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.action-button-wrapper{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.action-icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    margin-right: 10px;
+}
+.action-icon i {
+    font-size: 2em; /* 調整icon size */
+    color: white;
+}
+.action-button {
+    color: white;
+    flex-grow: 1;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background: linear-gradient(to right, #b1d2e6, #4e6978);
+    border: 1px solid white; /* 添加外框 */
+    /* border: none; */
+    transition: background-color 0.3s;
+    text-align: center;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; */
+}
+.action-button:hover {
+    background: linear-gradient(to left, #b1d2e6, #4e6978);
+}
+.action-button i {
+    margin-right: 10px;
+}
+#search-container {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #a6a6a6, #ffffff);
+    border:1px solid black;
+    /* border-image: linear-gradient(to right, #8c52ff, #5ce1e6) 1; */
+    padding: 5px;
+    margin-bottom: 10px;
+    height: 5%;
+    width: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: background-color 0.3s;
+}
+#search-container:hover {
+    background:linear-gradient(to left, #c3e6cb, #94b9ff);
+}
+#search-icon {
+    color: black;
+    margin-right: 5px;
+    transition: color 0.3s;
+}
+#search-container:hover #search-icon {
+    color: white;
+}
+#search-input {
+    border: none;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    width: 100%;
+    border-radius: 20px;
+}
+#list-header {
+    display: flex;
+    justify-content: center; /* 中间对齐 */
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+#list-header h3 {
+    margin: 0;
+}
+#image-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+    flex-grow: 1;
+    overflow-y: auto;
+    width: 90%;
+    max-height: 300px;
+}
+#image-list li {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    height: 40px;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+}
+#image-list li:hover{
+    /* background-color: #c3e6cb; */
+    background:linear-gradient(to right, #c3e6cb, #94b9ff);
+}
+#select-folder {
+    position: relative; /* 用於定位偽元素 */
+    margin-top: 20px;
+    padding: 15px 0;
+    width: 90%;
+    border-radius: 15px; /* 設定圓角半徑 */
+    font-size: 1.5em;
+    cursor: pointer;
+    /* background: black; 按鈕背景色 */
+    color: #004aad; /*文字顏色*/
+    background: linear-gradient(to left, #8c52ff, #5ce1e6); /* 漸層顏色 */
+    transition: background-color 0.3s;
+    border: 2px solid transparent; /* 透明邊框以便顯示漸層外框 */
+    z-index: 1; /* 確保偽元素在按鈕下層 */
+}
+
+#select-folder::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px; /* 設定圓角半徑 */
+    background: white; /*漸層顏色*/
+    z-index: -1; /* 放置在按鈕背景後面 */
+    padding: 3px; /* 適應邊框粗細 */
+    box-sizing: border-box; /* 確保內邊距計入總寬度 */
+}
+
+#select-folder:hover {
+    background: linear-gradient(to right, #8c52ff, #5ce1e6); 
+    /* 漸層顏色 */
+    /* background: black; 按鈕背景色 */
+    /* color: black; 保持文字顏色不變 */
+}
+
+
+
+
+#user-menu-block {
+    margin-top: auto;
+    margin-bottom: 20px; 
+    /* Increase margin to raise block */
+    position: relative;
+    width: calc(100% - 40px);
+    /* align-self: flex-end;
+    margin-right: 10px; */
+}
+#user-menu {
+    border: 2px solid;
+    padding: 30px 10px; /* Increase padding for larger block */
+    border-radius: 20px;
+    width: 90%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-color: black;
+    justify-content: space-between;
+    /* position: relative; */
+}
+#user-menu:hover {
+    background:linear-gradient(to right, #c3e6cb, #94b9ff);
+}
+#user-dropdown {
+    display: none;
+    position: absolute;
+    bottom: 100%; /* Position above user menu */
+    left: auto;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+#user-dropdown a {
+    padding: 10px 15px;
+    display: block;
+    color: black;
+    text-decoration: none;
+}
+#user-dropdown a:hover {
+    background-color: #ddd;
+}

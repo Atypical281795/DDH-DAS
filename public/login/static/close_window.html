@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Close Window</title>
+    <script type="text/javascript">
+        function closeWindow() {
+            window.open("about:blank","_self")
+            window.close();
+        }
+    </script>
+</head>
+<body>
+    <p>You have been logged out.</p>
+    <button onclick="closeWindow()">OK</button>
+    <noscript>
+        <p>Please close this window manually.</p>
+    </noscript>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <div class="left-block">
+            <div class="profile-icon-container">
+                <input type="file" id="profile-upload" accept="image/*" style="display:none">
+                <label for="profile-upload" class="profile-icon">
+                    <img src="C:\Users\Ryan\Desktop\DDHDAS\public\profile\default.webp" alt="Profile" id="profile-image">
+                </label>
+            </div>
+            <h2 id="profile-name">Your Name</h2>
+            <p class="UserID:X0058">Indntity</p>
+        </div>
+        <div class="right-block">
+            <div class="heart-rate-icon">
+                 <!-- <img src="C:\Users\Ryan\Desktop\DDHDAS\public\profile\heart-beat.svg"> -->
+            </div>
+            <div class="input-group">
+                <label for="experience">Experience</label>
+                <textarea id="experience" rows="4"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone">
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email">
+            </div>
+            <div class="input-group">
+                <label for="location">Location</label>
+                <input type="text" id="location">
+            </div>
+            <div class="button-group">
+                <button id="back-to-menu" onclick="window.location.href='http://localhost/DDHDAS/public/main/main.php'">Back to Menu</button>
+                <button id="save-profile">Save</button>
+            </div>
+        </div>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DDH-Detection Assistive System</title>
+    <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="settings-icon">⚙️ Settings</div>
+        <div class="menu-item active" onclick="showSection('general')">General</div>
+        <div class="menu-item" onclick="showSection('login')">Login</div>
+        <div class="menu-item" onclick="showSection('help')">Help</div>
+    </div>
+    <div class="content">
+        <h1>DDH-Detection Assistive System</h1>
+        <div id="general" class="form-container">
+            <h2>Time Zone</h2>
+            <select>
+                <option>Select Time Zone</option>
+                <!-- Time Zone Options -->
+                <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+                <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+                <option value="-10:00">(GMT -10:00) Hawaii</option>
+                <!-- Add remaining time zones here -->
+            </select>
+            <h2>Language</h2>
+            <select>
+                <option>Select Language</option>
+                <option>English</option>
+                <option>Chinese</option>
+            </select>
+            <div class="button-group">
+                <button id="back-to-menu" onclick="window.location.href='http://localhost/DDHDAS/public/main/main.php'">Back to Menu</button>
+                <button id="save-profile">Save</button>
+            </div>
+        </div>
+        <div id="login" class="form-container" style="display:none;">
+            <h2>Prof. Identity</h2>
+            <input type="text" placeholder="Username">
+            <h2>Change Password</h2>
+            <input type="password" placeholder="Old Password">
+            <input type="password" placeholder="New Password">
+            <input type="password" placeholder="Confirm New Password">
+            <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                <span style="margin-right: 10px;">Remember me</span>
+                <label class="toggle-switch">
+                    <input type="checkbox">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div class="button-group">
+                <button id="back-to-menu" onclick="window.location.href='http://localhost/DDHDAS/public/main/main.php'">Back to Menu</button>
+                <button id="save-profile">Save</button>
+            </div>
+        </div>
+        <div id="help" class="form-container" style="display:none;">
+            <h2>Suggestion function</h2>
+            <div class="input-group">
+                <input type="text" placeholder="Enter your suggestion">
+                <button id="send">Send</button>
+            </div>
+            <h2>Return problem</h2>
+            <div class="input-group">
+                <input type="text" placeholder="Describe the problem">
+                <button id="send">Send</button>
+            </div>
+            <div class="button-group">
+                <button id="back-to-menu" onclick="window.location.href='http://localhost/DDHDAS/public/main/main.php'">Back to Menu</button>
+            </div>
+        </div>
+    </div>
+    <script src="settings.js"></script>
+</body>
+</html>
